@@ -53,12 +53,12 @@ function draw() {
   background(0);
   
   //nested forloops creating a grid of circles based on the browser window width and height, with coordinates normalized to the top left corner
-  for( var x = 0 - (windowWidth/2); x < windowWidth; x+=(windowWidth/2)/10) {
-    for (var y = 0 - (windowHeight/2); y < windowHeight; y += windowHeight/10) {
+  for( var x = 0 - (windowWidth/2); x < windowWidth; x+=(windowWidth/2)/8) {
+    for (var y = 0 - (windowHeight/2); y < windowHeight; y += (windowHeight/2)/8) {
       
       //dynamically transform circle radius based on how close the mouse is to its position
       var z =  20 - 4 * log(.06 / 1 * dist( x, y, lerp(tempmx, mouseX, .4)-(windowWidth/2), lerp(tempmy, mouseY, .4)-(windowHeight/2) ) ) ;
-      
+      fill(fade1);      
       //draw circle
       circle( x, y, z);
       
